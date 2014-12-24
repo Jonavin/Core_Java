@@ -44,7 +44,7 @@ public class IOUtil {
 		FileOutputStream out = new FileOutputStream(destFile);//目标文件
 		int b;
 		byte[] buf = new byte[8*1024];//开辟8K的缓存
-		while ((b = in.read(buf))!=-1) {
+		while ((b = in.read(buf,0,buf.length))!=-1) {
 			out.write(buf, 0, b);
 		}
 		in.close();
@@ -91,7 +91,7 @@ public class IOUtil {
 		BufferedOutputStream outbuf = new BufferedOutputStream(out);
 		int b;
 		byte[] buf = new byte[8*1024];
-		while ((b = inbuf.read(buf))!=-1) {
+		while ((b = inbuf.read(buf,0,buf.length))!=-1) {
 			outbuf.write(buf,0,b);
 		}
 		in.close();

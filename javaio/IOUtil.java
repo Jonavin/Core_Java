@@ -109,4 +109,13 @@ public class IOUtil {
 	public static void copyFile(String srcpath,String destpath)throws IOException{
 		copyFileByBuffedBuf(new File(srcpath), new File(destpath));
 	}
+	
+	/**
+	 * 
+	调用 ： IOUtil.copyFile("C:\\apache-tomcat-7.0.57.zip", "c:\\ret.dat");//源文件大小9M
+	copyFileByByte  ----》 62229 毫秒
+	copyFileByByteBuf -----》 97 毫秒
+	copyFileByBuffed -----》 457 毫秒
+	copyFileByBuffedBuf ----》 28 毫秒 效率最好
+	 * /
 }
